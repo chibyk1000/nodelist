@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include('../partials/links')%>
+    <title><%= blog.title  %></title>
+</head>
+<body>
+        <%- include('../partials/navbar') %>
+    
+        <div class="bg-dark py-3 ps-3" contenteditable>
+           <h1 class="text-white fs-3"><%= blog.title  %> </h1>
+        </div>
+        <main class="blog-main">
+
+                    <div class=" mx-3">
+            <%- blog.details  %> 
+                    </div>
+        </main>
+
+        <script>
+            let ql = document.querySelector('.ql-editor')
+
+            ql.contentEditable = false
+        </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/links.ejs') %>
+    <link rel="stylesheet" href="/css/dashboard.css" />
+   
+    <title>dashboard</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+    <%- include('../../partials/sidebar') %>
+        <div class="col-10 main">
+    <%- include('../../partials/dashnav') %>
+          
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 shadow p-3 mt-4">
+          <h2>Admin Profile</h2>
+          <form action="/admin/upload-profile-pics" method="post" enctype="multipart/form-data" >
+            <div class=" image"><img src="<%=image  %> " alt="">
+            
+              <div class="d-flex justify-content-between">
+
+                <input type="file" name="file" class="profile_pics my-2">
+                <button class="btn btn-outline-dark">upload</button>
+              </div>
+            
+            </div>
+          </form>
+          <form action="" id="profile">
+            <input type="text" class="form-control" value="<%=firstname  %> " id="firstname">
+            <input type="text" class="form-control my-3" value="<%=lastname  %> " id="lastname">
+            <input type="text" class="form-control" value="<%=email %> " id="email">
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-primary rounded-0 mt-3">update</button>
+            </div>
+          </form>
+          <p><%= message  %> </p>
+       
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+Update password 
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered">
+    <form class="modal-content" id="pass_frm">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Update password</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+    <input type="password" class="form-control mb-3" placeholder="current password" id="current_password">
+    <input type="password" class="form-control mb-3" placeholder="new password" id="new_password">
+    <input type="password" class="form-control mb-3" placeholder="comfirm password" id="confirm_password">
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-secondary" >Submit</button>
+     
+      </div>
+    </form>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

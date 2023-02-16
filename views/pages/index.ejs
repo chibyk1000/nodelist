@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <%- include('../partials/links') %>
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+
+    <div class="contaner-fluid">
+      <div class="row">
+        <% for( let i = 0; i < blogs.length; i++ ) { %>
+        
+          <div class="col-3 blog rounded">
+            <img src="<%=blogs[i].image  %> " alt="" class="">
+          
+<p class="fw-bold"><%= blogs[i].title  %> </p>
+              
+       
+<p class="text-italic text-primary">     <%= blogs[i].author  %> </p>
+
+<a class="btn btn-outline-dark" href="/blog/<%=blogs[i].blogId  %> ">Continue reading</a>
+          </div>
+        <% } %>
+        
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,83 @@
+body{
+    overflow-x: hidden ;
+}
+
+.sidebar{
+    position: relative;
+    height: 100vh;
+    position: fixed;
+    overflow-x: hidden;
+    width: 3.5rem ;
+    transition: width ease-in-out 1s;
+
+}
+.side-item{
+    border-bottom: 1px solid #f2f2f2;
+   
+}
+
+.logo{
+    width: 2rem;
+}
+
+.logo img{
+    width: 100%;
+}
+.side-item:hover{
+    background-color: #43853D;
+    color: #f2f2f2;
+}
+.side-item i{
+    margin-right: 1rem;
+}
+.close{
+    width: 10rem;
+    transition: width ease-in-out 1s;
+    
+}
+.side-item:first-child{
+    border-top: #f2f2f2 1px solid;
+    margin-top: 10px;
+}
+.main{
+  
+    margin-left: 3.1vw;
+    width: calc(100vw - 2.5vw) !important;
+     transition: all ease-in-out 1s;
+}
+.logout{
+    position: fixed;
+    bottom: 10px;
+}
+.main-collapse{
+    width: 90vw !important;
+    margin-left: 10.7vw;
+    transition: all ease-in-out 1s;
+}
+.navbar{
+    width: 100% !important;
+    /* background-color: black !important; */
+ 
+}
+
+.nav_collapse{
+   width: calc(100% - 85.5vw) !important;  
+}
+
+.image img{
+
+    height: 200px; 
+    margin-bottom: 5px;
+    width: 100%;
+
+
+}
+
+.profile_pics{
+    
+}
+.image{
+   width: 200px;
+    margin-bottom: 1rem;
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/links.ejs') %>
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <title>dashboard</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+    <%- include('../../partials/sidebar') %>
+        <div class="col-10 main">
+    <%- include('../../partials/dashnav') %>
+          
+    <div class="container">
+        <div class="col-md-7">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Title</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                
+                <tbody>
+                    
+                    <% for( let i = 0; i < blogs.length; i++ ) { %>
+                    <tr>
+<th><%= i+1  %> </th>
+<td><%= blogs[i].title  %> </td>
+<td class="d-flex gap-2">
+   
+
+   
+        <a href="/admin/blog/<%=blogs[i].blogId %>"  class="btn btn-warning text-white"><i class="fa-solid fa-edit"></i></a>
+
+    <form class="deletefrm">
+        <input type="hidden" class="blogId" value="<%=blogs[i].blogId %>">
+  <button type="submit" class="btn btn-danger text-white"><i class="fa-solid fa-trash"></i></button>
+    </form>
+  </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <%- include('../partials/links') %>
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+  
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-5 shadow bg-white p-3">
+                <h1>Sign in</h1>
+                <p>Sign in to continue</p>
+                <form action="/auth/login" method="post">
+                    <input type="text" class="form-control" placeholder="email or username" name="username">
+                    <input type="password" class="form-control my-3" placeholder="password" name="password">
+                    <button class="btn btn-primary">Login</button>
+<% if (message.type === "error"){%>
+<div class="alert alert-danger mt-2"><%= message.msg  %> </div>
+    <% } %> 
+<% if (message.type === "success"){%>
+<div class="alert alert-success mt-2"><%= message.msg  %> </div>
+    <% } %> 
+                </form>
+           <p class="mt-3">Don't have an account yet? <a href="/signup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+
+  </body>
+</html>

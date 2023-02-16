@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/links.ejs') %>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <title>dashboard</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+    <%- include('../../partials/sidebar') %>
+        <div class="col-10 main">
+    <%- include('../../partials/dashnav') %>
+       
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7  shadow shadow-lg p-3 mt-5">
+<h1>Add a Blog</h1>
+            <form action="" class="addblogfrm">
+                <input type="text" class="form-control" id="title" placeholder="Title">
+                <input type="text" class="form-control my-3" id="author" placeholder="Author">
+                <input type="file" class="form-control mb-3" id="file">
+                <div name="" id="details">
+
+                </div>
+
+                <button class="btn btn-dark d-block w-100  mt-3">Submit</button>
+            </form>
+          </div>
+        </div>
+    </div>
+        </div>
+      </div>
+    </div>
+    
+ <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/editor.js"></script>
+  </body>
+</html>

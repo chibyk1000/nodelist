@@ -1,0 +1,23 @@
+*{
+    /* overflow-x: hidden; */
+}
+
+.nav_sec{
+    width: 60%;
+}
+
+.blog img{
+width: 100%;
+}
+.blog{
+    margin: 0 2rem;
+    border: 1px solid #ccc;
+    border-radius: ;
+    height: 24rem;
+}
+
+.blog-main{
+    width: 80%;
+    margin: 0 auto;
+    border: #ccc 1px solid;
+}

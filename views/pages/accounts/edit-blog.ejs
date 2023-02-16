@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/links.ejs') %>
+    <link rel="stylesheet" href="/css/dashboard.css" />
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <title>dashboard</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+    <%- include('../../partials/sidebar') %>
+        <div class="col-10 main">
+    <%- include('../../partials/dashnav') %>
+        
+    <div>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+     <h1>Edit blog</h1>
+                    <form action="" class="editblogfrm">
+                        <input type="hidden" value="<%= blog.blogId  %>" id="blogId">
+                                 <input type="text" class="form-control" id="title" placeholder="Title" value="<%= blog.title  %> ">
+                                 <input type="text" class="form-control my-3" id="author" value="<%=blog.author  %> " placeholder="Author">
+                                 <input type="file" class="form-control mb-3" id="file">
+                                 <img src="<%=blog.image  %> " alt="" style="width:200px; height:200px" class="my-3 border">
+                                 <div name="" id="details">
+                 <%- blog.details  %> 
+                                 </div>
+                 
+                                 <button class="btn btn-dark d-block w-100  mt-3">Submit</button>
+                             </form>
+                </div>
+            </div>
+        </div>
+   
+    </div>
+        </div>
+      </div>
+    </div>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="/js/dashboard.js"></script>
+      
+
+    <script>
+        var quill = new Quill("#details", {
+  theme: "snow",
+});
+
+
+$('.editblogfrm').submit( async function (e) { 
+    e.preventDefault();
+const title = $('#title').val()
+    const author = $('#author').val()
+    const blogId = $('#blogId').val()
+    const details = $('#details').html()
+    const file = $("#file").prop("files")[0];
+    const formData = new FormData()
+    formData.append('author', author)
+    formData.append('details', details)
+    formData.append('blogId', blogId)
+    formData.append('file', file)
+    formData.append('title', title)
+    console.log(file)
+
+ const resp = await   axios.put("/admin/edit-blog", formData,    {
+     headers: {
+          "Content-Type": "multipart/form-data"
+      }
+  });
+    // const data = await response.json()
+    console.log(resp)
+    if (resp.status === 200) {
+        location.reload()
+    }
+});
+    </script>
+  </body>
+</html>
